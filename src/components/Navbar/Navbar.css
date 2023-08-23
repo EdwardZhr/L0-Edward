@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .navbar {
+        display: none;
+    }
+}
+
+.navbar__item~.navbar__item {
+    margin-left: 42.5px;
+}
+
+.navbar__link {
+    font-size: 13px;
+    line-height: 16px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.navbar__icon {
+    display: block;
+    position: relative;
+    height: 22.8px;
+    margin: 0 auto 10px;
+}
+
+.navbar__icon--profile {
+    width: 19px;
+    background: url(../../images/profile.svg) center/contain no-repeat;
+}
+
+.navbar__icon--basket {
+    width: 26px;
+    margin-left: 9px;
+    background: url(../../images/basket.svg) center/contain no-repeat;
+}
+
+.navbar__notify {
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    min-width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -7px;
+    right: -11px;
+    background: #f55123;
+    padding: 0 2px;
+    border-radius: 16px;
+}

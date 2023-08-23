@@ -6,6 +6,43 @@
     <title>L0-Edward</title>
 </head>
 <body>
-    hi
+    <header class="header">
+        <div class="header__container">
+            <div class="header__nav-element nav-element">
+                <button class="nav-element__burger">
+                    <span class="nav-element__burger-line"></span>
+                </button>
+                <a class="nav-element__logo" href="/">
+                    <picture>
+                        <source srcset="<%=require('./images/nav-logo--mobile.svg')%>" media="(max-width: 1023.98px)">
+                        <img src="<%=require('./images/nav-logo.svg')%>" alt="Товары и точка">
+                    </picture>
+                </a>
+                <button class="nav-element__search"></button>
+            </div>
+            <div class="header__search-catalog search-catalog">
+                <input type="search" maxlength="300" autocomplete="off" placeholder="Я ищу..." class="search-catalog__input">
+                <button type="button" class="search-catalog__btn"></button>
+            </div>
+            <div class="header__navbar navbar">
+                <div class="navbar__item">
+                    <a class="navbar__link" href="/">
+                        <span class="navbar__icon navbar__icon--profile"></span>
+                        Профиль
+                    </a>
+                </div>
+                <div class="navbar__item">
+                    <a class="navbar__link" href="/">
+                        <span class="navbar__icon navbar__icon--basket">
+                            <span class="navbar__notify">3</span>
+                        </span>
+                        Корзина
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
 </body>
 </html>

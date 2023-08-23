@@ -1,0 +1,110 @@
+.nav-element {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .nav-element {
+        width: 100%;
+    }
+}
+
+.nav-element__burger {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 8px;
+    padding: 21px 9px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .nav-element__burger {
+        border: none;
+        margin-right: 20px;
+        padding: 12.5px 2.5px;
+    }
+}
+
+.nav-element__burger-line {
+    width: 28px;
+    height: 4px;
+    position: relative;
+    display: block;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.nav-element__burger-line::before, .nav-element__burger-line::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: block;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.nav-element__burger-line::before {
+    top: -10px;
+}
+
+.nav-element__burger-line::after {
+    bottom: -10px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .nav-element__burger-line {
+        border: none;
+        width: 22.5px;
+        height: 2px;
+        border-radius: 2.5px;
+    }
+    
+    .nav-element__burger-line::before, .nav-element__burger-line::after {
+        border-radius: 2.5px;
+    }
+
+    .nav-element__burger-line::before {
+        top: -8px;
+    }
+    
+    .nav-element__burger-line::after {
+        width: 16.5px;
+        bottom: -8px;
+    }
+}
+
+.nav-element__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 106px;
+    height: 48px;
+    padding-top: 4px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .nav-element__logo {
+        width: 198px;
+        height: 24px;
+    }
+}
+
+.nav-element__search {
+    display: none;
+    border: none;
+    outline: none;
+    width: 20.14px;
+    height: 20.14px;
+    padding: 0;
+    margin-left: auto;
+    background: url(../../images/search-btn.svg) center/contain no-repeat;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .nav-element__search {
+        display: block;
+    }
+}

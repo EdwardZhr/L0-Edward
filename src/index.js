@@ -1,4 +1,4 @@
-console.log('Hello, World!') 
+import './index.css';
 
 const numbers = [2, 3, 5];
 

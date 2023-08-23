@@ -1,0 +1,51 @@
+.search-catalog {
+    position: relative;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .search-catalog {
+        display: none;
+    }
+  }
+
+.search-catalog__input {
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(255,255,255,.5);
+    width: 100%;
+    padding: 10px 120px 14px 20px;
+    margin: 0;
+    border-radius: 36px;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+    appearance: none;
+    border: none;
+    outline: none;
+}
+
+.search-catalog__input::placeholder {
+    color: rgba(255,255,255,.5);
+}
+
+.search-catalog__input::-webkit-search-cancel-button {
+    display: none;
+  }
+
+.search-catalog__btn {
+    position: absolute;
+    padding: 0;
+    top: 14px;
+    right: 22.55px;
+    width: 19.51px;
+    height: 20.2px;
+    cursor: pointer;
+    opacity: .4;
+    border: none;
+    outline: none;
+    background: url(../../images/search-btn.svg) center/contain no-repeat;
+    transition: opacity .3s ease 0s;
+}
+
+.search-catalog__btn:hover {
+    opacity: 1;
+}
