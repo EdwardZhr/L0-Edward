@@ -1,0 +1,70 @@
+.list__header {
+    padding-bottom: 17px;
+    margin: 0 0 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.list__header--rolled {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.list__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.list__icon {
+    width: 16px;
+    height: 9.5px;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .list__icon  {
+        margin-right: 5px;
+    }
+}
+
+.list__icon::before {   
+    content: '−';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: rgba(151, 151, 175, 1);
+    width: 9px;
+    height: 9px;
+    transform: rotate(135deg);
+    margin-top: 9px;
+    transition: margin .3s ease,transform .3s ease;
+    cursor: pointer;
+}
+
+.list__icon:hover::before {   
+    border-color: #242424;
+}
+
+.list__icon--rotated::before {   
+    content: '−';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: rgba(151, 151, 175, 1);
+    width: 9px;
+    height: 9px;
+    transform: rotate(315deg);
+    margin-top: 5px;
+    transition: margin .3s ease,transform .3s ease;
+    cursor: pointer;
+}
+
+.list__section--hidden {
+    display: none;
+}

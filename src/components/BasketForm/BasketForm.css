@@ -1,0 +1,330 @@
+.basket-form {
+    display: flex;
+    position: relative;
+    z-index: auto;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form {
+        flex-direction: column;
+    }
+}
+
+.basket-form__content {
+    margin-right: 32px;
+    width: calc(100%/12*9 - 123px);
+}
+
+@media screen and (max-width: 1399.98px) {
+    .basket-form__content {
+        width: 65.5%;
+    }
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__content {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.basket-form__list {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__list {
+        margin-bottom: 52px;
+        box-sizing: border-box;
+        padding: 0 16px;
+    }
+}
+
+.basket-form__list--rolled {
+    margin-bottom: 4px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__list--rolled {
+        margin-bottom: 5px;
+    }
+}
+
+.basket-form__delivery-container {
+    margin-top: 16px;
+}
+
+
+.basket-form__title {
+    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        padding: 0 16px;
+    }
+}
+
+.basket-form__section {
+    background: white;
+    border-radius: 16px;
+    padding: 16px 24px 24px;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section { 
+        padding: 16px 16px 24px;
+        margin-bottom: 12px;
+    }
+}
+
+.basket-form__section:last-child {
+    margin-bottom: 0;
+}
+
+.basket-form__section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.basket-form__section-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.01em;
+    }
+}
+
+.basket-form__section-btn {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: rgba(203, 17, 171, 1);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.basket-form__section-chapter {
+    display: flex;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-chapter {
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    .basket-form__section-chapter:nth-child(2) {
+        margin-top: 8px;
+    }
+}
+
+.basket-form__section-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+    width: 153px;
+    margin-right: 32px;
+}
+
+.basket-form__section-content {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.basket-form__section-content--inputs {
+    max-width: 700px;
+    column-gap: 24px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-content--inputs  {
+        row-gap: 16px;
+    }
+}
+
+.basket-form__section-wrap {
+    width: 100%;
+    margin-top: 4px;
+    gap: 8px;
+    display: flex;
+}
+
+.basket-form__section-content-grade {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.basket-form__section-content-grade::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(../../images/star.svg) center/contain no-repeat;
+}
+
+.basket-form__section-content-schedule {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.basket-form__section-additional-wrap {
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-additional-wrap  {
+        margin-left: 10px;
+    }
+}
+
+.basket-form__section-additional-wrap::before {
+    content: "";
+    min-width: 20px;
+    height: 20px;
+    background: url(../../images/green-checkmark.svg) center/contain no-repeat;
+    margin-right: 9px;
+}
+
+.basket-form__section-additional {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-additional  {
+        width: 80%;
+    }
+}
+
+.basket-form__section-additional-span {
+    font-size: 13px;
+    line-height: 16px;
+    margin-left: 4px;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
+    color: rgb(12, 180, 119);
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+.basket-form__section-content-card {
+    margin: 0 12px 0 8px;
+}
+
+.basket-form__section-card-additional {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 16px;
+    width: 100%;
+    color: rgba(151, 151, 175, 1);
+}
+
+.basket-form__section-label {
+    width: 217px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1399.98px) {
+    .basket-form__section-label {
+        width: 180.5px;
+    }
+
+    .basket-form__section-label:nth-child(2) {
+        margin-right: 0;
+    }
+
+    .basket-form__section-label:nth-child(5) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-label  {
+        height: 56px;
+        max-width: 288px;
+        width: 100%;
+    }
+}
+
+.basket-form__section-label--name, .basket-form__section-label--surname {
+    width: 338px;
+}
+
+@media screen and (max-width: 1399.98px) {
+    .basket-form__section-label--name, .basket-form__section-label--surname {
+        width: 283px;
+    }
+}
+
+.basket-form__section-input {
+    padding: 0;
+    padding-bottom: 3px;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    margin-top: 2px;
+    outline: none;
+}
+
+.basket-form__section-input::placeholder {
+    color: rgba(151, 151, 175, 1);
+}
+
+.basket-form__section-input-placeholder {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+    color: rgba(151, 151, 175, 1);
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-input-placeholder {
+        line-height: 13px;
+    }
+}
+
+.basket-form__section-input-error {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 4px;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .basket-form__section-input-error {
+        line-height: 12px;
+    }
+}

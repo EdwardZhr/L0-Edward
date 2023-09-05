@@ -1,0 +1,24 @@
+.main {
+    padding: 12px 0 26px;
+    background-color: rgba(246, 246, 250, 1);
+}
+
+@media screen and (max-width: 1023.98px) {
+    .main {
+        padding: 0;
+    }
+}
+
+.main__container {
+    align-items: center;
+    max-width: 1504px;
+    padding: 0 24px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .main__container {
+        padding: 0;
+    }
+}

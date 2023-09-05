@@ -1,0 +1,56 @@
+.navbar-mobile {
+    display: none;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    padding: 0 4px;
+    box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.3);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    opacity: 0;
+    z-index: 100;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .navbar-mobile  {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+.navbar-mobile__link {
+    display: block;
+    flex-grow: 1;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+.navbar-mobile__icon {
+    display: block;
+    height: 28px;
+    width: 28px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.navbar-mobile__icon--home {
+    background: url(../../images/main.svg) center/contain no-repeat;
+}
+
+.navbar-mobile__icon--search {
+    background: url(../../images/catalog.svg) center/contain no-repeat;
+}
+
+.navbar-mobile__icon--basket {
+    background: url(../../images/cart.svg) center/contain no-repeat;
+}
+
+.navbar-mobile__icon--favorite {
+    background: url(../../images/favorites.svg) center/contain no-repeat;
+}
+
+.navbar-mobile__icon--profile {
+    background: url(../../images/profile-mobile.svg) center/contain no-repeat;
+}

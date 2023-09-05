@@ -42,7 +42,258 @@
             </div>
         </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <main class="main">
+        <div class="main__container">
+            <form class="basket-form" action="#">
+                <div class="basket-form__content">
+                    <h1 class="basket-form__title">Корзина</h1>
+                    <div class="basket-form__list list">
+                        <div class="list__header">
+                            <label class="checkbox">
+                                <input class="checkbox__input" type="checkbox" name="checkbox" value="false">
+                                <span class="checkbox__checkmark checkbox__checkmark--transparent"></span>
+                                <span class="checkbox__title">Выбрать все</span>
+                            </label>
+                            <div class="list__icon"></div>
+                        </div>
+                        <div class="list__section"></div>
+                    </div>
+                    <div class="basket-form__list list">
+                        <div class="list__header">
+                            <span class="list__title">Отсутствуют · 3 товара</span>
+                            <div class="list__icon"></div>
+                        </div>
+                        <div class="list__section--missing"></div>
+                    </div>
+                    <div class="basket-form__section">
+                        <div class="basket-form__section-header">
+                            <h2 class="basket-form__section-title">Способ доставки</h2>
+                            <button class="basket-form__section-btn">Изменить</button>
+                        </div>
+                        <div class="basket-form__section-chapter">
+                            <h3 class="basket-form__section-subtitle">Пункт выдачи</h3>
+                            <div class="basket-form__section-content">
+                                Бишкек, улица Ахматбека Суюмбаева, 12/1
+                                <div class="basket-form__section-wrap">
+                                    <span class="basket-form__section-content-grade">4.99</span>
+                                    <span class="basket-form__section-content-schedule">Ежедневно с 10 до 21</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket-form__section-chapter">
+                            <h3 class="basket-form__section-subtitle">Стоимость доставки</h3>
+                            <div class="basket-form__section-content">
+                                Бесплатно
+                            </div>
+                        </div>
+                        <div class="basket-form__delivery-container delivery-container">
+                            <!-- <div class="delivery-container__line">
+                                <h3 class="delivery-container__title">5—6 февраля</h3>  
+                                <div class="delivery-container__content">
+                                    <a class="delivery-container__img" href="#">
+                                        <img src="<%=require('./images/phone-case.png')%>" alt="" height="56" width="40">
+                                        <span class="delivery-container__notify">184</span>
+                                    </a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="basket-form__section-additional-wrap">
+                            <div class="basket-form__section-additional">
+                                Обратная доставка товаров на склад при отказе — 
+                                <span class="basket-form__section-additional-span">бесплатно</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-form__section">
+                        <div class="basket-form__section-header">
+                            <h2 class="basket-form__section-title">Способ оплаты</h2>
+                            <button class="basket-form__section-btn">Изменить</button>
+                        </div>
+                        <div class="basket-form__section-chapter">
+                            <div class="basket-form__section-content">
+                                <img src="<%=require('./images/card-mir.svg')%>" alt="" height="24" width="32">
+                                <span class="basket-form__section-content-card">1234 56•• •••• 1234</span>
+                                <span class="basket-form__section-content-date">01/30</span>
+                                <div class="basket-form__section-card-additional">Спишем оплату с карты при получении</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-form__section">
+                        <div class="basket-form__section-header">
+                            <h2 class="basket-form__section-title">Получатель</h2>
+                        </div>
+                        <div class="basket-form__section-chapter">
+                            <div class="basket-form__section-content basket-form__section-content--inputs">
+                                <label class="basket-form__section-label basket-form__section-label--name">
+                                    <span class="basket-form__section-input-placeholder">Имя</span>
+                                    <input class="basket-form__section-input basket-form__section-input--name" type='text' placeholder="Имя"></input>
+                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                </label>
+                                <label class="basket-form__section-label basket-form__section-label--surname">
+                                    <span class="basket-form__section-input-placeholder">Фамилия</span>
+                                    <input class="basket-form__section-input basket-form__section-input--surname" type='text' placeholder="Фамилия"></input>
+                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                </label>
+                                <label class="basket-form__section-label">
+                                    <span class="basket-form__section-input-placeholder">Почта</span>
+                                    <input class="basket-form__section-input basket-form__section-input--email" type='email' placeholder="Почта"></input>
+                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                </label>
+                                <label class="basket-form__section-label">
+                                    <span class="basket-form__section-input-placeholder">Телефон</span>
+                                    <input class="basket-form__section-input basket-form__section-input--number" type='text' placeholder="Телефон"></input>
+                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                </label>
+                                <label class="basket-form__section-label">
+                                    <span class="basket-form__section-input-placeholder">ИНН</span>
+                                    <input class="basket-form__section-input basket-form__section-input--inn" type='number' placeholder="ИНН"></input>
+                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="basket-form__sidebar sidebar">
+                    <div class="sidebar__stiky-wrap">
+                        <p class="sidebar__total-line">
+                            <span>Итого</span>
+                            <span class="sidebar__total"><span class="sidebar__total-som">сом</span></span>
+                        </p>
+                        <p class="sidebar__line">
+                            <span class="sidebar__quantity"></span>
+                            <span class="sidebar__sum"></span>
+                        </p>
+                        <p class="sidebar__line">
+                            <span>Скидка</span>
+                            <span class="sidebar__discount"></span>
+                        </p>
+                        <p class="sidebar__line">
+                            <span>Доставка</span>
+                            <span>Бесплатно</span>
+                        </p>
+                        <div class="sidebar__section">
+                            <div class="sidebar__section-header">
+                                <h3 class="sidebar__subtitle">Доставка в пункт выдачи</h3>
+                                <button class="sidebar__section-btn"></button>
+                            </div>
+                            <div class="sidebar__adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                            <div class="sidebar__date">5–8 фев</div>
+                            <div class="sidebar__additional-wrap">
+                                <div class="sidebar__additional">
+                                    Обратная доставка товаров на склад при отказе —
+                                    <span class="sidebar__additional-span">бесплатно</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar__section">
+                            <div class="sidebar__section-header">
+                                <h3 class="sidebar__subtitle">Оплата картой</h3>
+                                <button class="sidebar__section-btn"></button>
+                            </div>
+                            <div class="sidebar__card-wrap">
+                                <img src="<%=require('./images/card-mir.svg')%>" alt="" height="24" width="32">
+                                <div class="sidebar__card">1234 56•• •••• 1234</div>
+                            </div>
+                            <div class="sidebar__card-additional-wrap">
+                                <div class="sidebar__card-additional">
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox" name="checkbox" value="false">
+                                        <span class="checkbox__checkmark"></span>
+                                    </label>
+                                    Списать оплату сразу
+                                    <span class="sidebar__card-additional-span">Спишем оплату с карты при получении</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="sidebar__btn">Заказать</button>
+                        <div class="sidebar__agreement-wrap">
+                            <p class="sidebar__agreement">Соглашаюсь <a class="sidebar__link" href="#">с правилами пользования торговой площадкой</a> и <a class="sidebar__link" href="#">возврата</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>    
+    </main>
+    <footer class="footer">
+        © 2022  ООО «Товары и точка»
+    </footer>
+    <div class="navbar-mobile">
+        <a class="navbar-mobile__link" href="#">
+            <span class="navbar-mobile__icon navbar-mobile__icon--home"><span>
+        </a>
+        <a class="navbar-mobile__link" href="#">
+            <span class="navbar-mobile__icon navbar-mobile__icon--search"><span>
+        </a>
+        <a class="navbar-mobile__link" href="#">
+            <span class="navbar-mobile__icon navbar-mobile__icon--basket"><span>
+        </a>
+        <a class="navbar-mobile__link" href="#">
+            <span class="navbar-mobile__icon navbar-mobile__icon--favorite"><span>
+        </a>
+        <a class="navbar-mobile__link" href="#">
+            <span class="navbar-mobile__icon navbar-mobile__icon--profile"><span>
+        </a>
+    </div>
+    <template class="list-item-template">
+        <div class="list-item">
+            <div class="list-item__checkbox-wrap list-item__checkbox-wrap--hidden">
+                <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="checkbox" value="false">
+                    <span class="checkbox__checkmark"></span>
+                </label>
+            </div>
+            <div class="list-item__good">
+                <div class="list-item__good-photo-size list-item__good-size-photo--hidden"></div>
+                <a class="list-item__good-img list-item__good-img--grey" href="#">
+                    <img src="" alt="">
+                </a>
+                <div class="list-item__good-info list-item__good-info--grey">
+                    <a class="list-item__good-title list-item__good-title--grey" href="#"></a>
+                    <div class="list-item__good-properties list-item__good-properties--hidden">
+                        <span class="list-item__good-color list-item__good-color--hidden list-item__good-color--grey"></span>
+                        <span class="list-item__good-size list-item__good-size--hidden list-item__good-size--grey"></span>
+                    </div>
+                    <div class="list-item__good-store list-item__good-store--hidden">
+                        <span class="list-item__good-place"></span>
+                        <div class="list-item__good-company-wrap">
+                            <span class="list-item__good-company"></span>
+                            <div class="list-item__good-icon"></div>
+                            <div class="list-item__tooltip list-item__tooltip--company">
+                                <span class="list-item__tooltip-header"></span>
+                                <span class="list-item__tooltip-info"></span>
+                                <span class="list-item__tooltip-adress"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item__count-wrap">
+                <div class="list-item__count list-item__count--hidden">
+                    <button class="list-item__minus"></button>
+                    <input class="list-item__numeric" type="nubmer" maxlength="3" min="1"></input>
+                    <button class="list-item__plus"></button>
+                </div>
+                <div class="list-item__balance list-item__balance--hidden"></div>
+                <div class="list-item__btns">
+                    <button class="list-item__btn-postpone"></button>
+                    <button class="list-item__btn-del"></button>
+                </div>
+            </div>
+            <div class="list-item__price list-item__price--hidden">
+                <div class="list-item__price-new"><span class="list-item__price-new-som">сом</span></div>
+                <div class="list-item__price-old"></div>
+                <div class="list-item__tooltip list-item__tooltip--price">
+                    <span class="list-item__tooltip-line">
+                        <span class="list-item__tooltip-dicount"></span>
+                        <span class="list-item__tooltip-total"></span>
+                    </span>
+                    <span class="list-item__tooltip-line">
+                        <span class="list-item__tooltip-dicount">Скидка покупателя 10%</span>
+                        <span class="list-item__tooltip-total"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </template>
 </body>
 </html>
