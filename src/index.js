@@ -4,11 +4,19 @@ import Section from './components/Section/Section';
 import ListItem from './components/ListItem/ListItem';
 import Sidebar from './components/Sidebar/Sidebar';
 import DeliveryContainer from './components/DeliveryContainer/DeliveryContainer';
+import BasketForm from './components/BasketForm/BasketForm';
+import CardPopup from './components/CardPopup/CardPopup';
+import AdressPopup from './components/AdressPopup/AdressPopup';
 
 const goodsContainer = '.list__section';
 const missingGoodsContainer = '.list__section--missing'
 const chooseAll = document.querySelector('.list__header input')
 const listHeaders = document.querySelectorAll('.list__header')
+const editCardBtn = document.querySelector('.basket-form__section-btn--card')
+const editCardSidebarBtn = document.querySelector('.sidebar__section-btn--card')
+const editAdressBtn = document.querySelector('.basket-form__section-btn--adress')
+const editAdressSidebarBtn = document.querySelector('.sidebar__section-btn--adress')
+const sidebarNotify = document.querySelector('.navbar__notify')
 
 const totalData = {
     totalNewPrice: 0,
@@ -55,11 +63,25 @@ const handleDeleteGood = function(goodId) {
     goods.forEach((item, index) => {
         if (item._id === goodId) {
             goods.splice(index, 1)
+            if (item.balance === 0) {
+                counterMissingGoods-=1
+            }
         }
     })
+    listHeaders[1].querySelector('.list__title').textContent = `Отсутствуют · ${counterMissingGoods} ${pluralizeGoods(counterMissingGoods)}`
     totalData.updateTotalData()
     sidebar.updateSidebarInfo(totalData)
     deliveryContainer.updateDeliveryContainer(goods)
+}
+
+const updateNotifyInfo = function(goods) {
+    sidebarNotify.textContent = goods.reduce((acc, item) => {
+        if (item.selected > 0 && item.isChecked) {
+            return acc + 1
+        } else {
+            return acc
+        }
+    }, 0)
 }
 
 const checkAllGoodsCheckbox = function() {
@@ -85,6 +107,7 @@ const handleCheckGood = function(goodId) {
     totalData.updateTotalData()
     sidebar.updateSidebarInfo(totalData)
     deliveryContainer.updateDeliveryContainer(goods)
+    updateNotifyInfo(goods)
     checkAllGoodsCheckbox()
 }
 
@@ -97,6 +120,7 @@ const handleCheckAllGoods = function() {
     })
     totalData.updateTotalData()
     sidebar.updateSidebarInfo(totalData)
+    updateNotifyInfo(goods)
     deliveryContainer.updateDeliveryContainer(goods)
 }
 
@@ -154,12 +178,83 @@ listHeaders.forEach(item => {
     })
 })
 
+const handleCardFormSubmit = function(data) {
+    const img = document.querySelector('.basket-form__section-content img')
+    img.src = data
+    cardPopup.close();
+}
+
+const handleAdressFormSubmit = function(data) {
+    const subtitle = document.querySelector('.basket-form__section-subtitle--way');
+    const adress = document.querySelector('.basket-form__section-adress');
+    const sidebarAdressSubtitle = document.querySelector('.sidebar__subtitle--adress');
+    const sidebarAdress = document.querySelector('.sidebar__adress');
+    const wrap = document.querySelector('.basket-form__section-wrap');
+    const grade = document.querySelector('.basket-form__section-content-grade');
+
+    subtitle.textContent = data.way
+    adress.textContent = data.adress
+    sidebarAdress.textContent = data.adress
+
+    if (data.way !== 'Пункт выдачи') {
+        sidebarAdressSubtitle.textContent = `Доставка курьером`
+        wrap.classList.add('basket-form__section-wrap--hidden')
+    } else {
+        sidebarAdressSubtitle.textContent = `Доставка в пункт выдачи`
+        if (wrap.classList.contains('basket-form__section-wrap--hidden')) {
+            wrap.classList.remove('basket-form__section-wrap--hidden')
+        }
+        grade.textContent = data.grade
+    }
+
+    adressPopup.close();
+}
+
+
 const sidebar = new Sidebar('.sidebar', separateNumber, pluralizeGoods)
-const deliveryContainer = new DeliveryContainer ('.delivery-container')
+const deliveryContainer = new DeliveryContainer('.delivery-container')
+const basketForm = new BasketForm('.basket-form')
+
+const cardPopup = new CardPopup('.popup--card', handleCardFormSubmit)
+cardPopup.setEventListeners()
+
+editCardBtn.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    cardPopup.open()
+})
+editCardSidebarBtn.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    cardPopup.open()
+})
+
+const adressPopup = new AdressPopup('.popup--adress', handleAdressFormSubmit)
+adressPopup.setEventListeners()
+
+editAdressBtn.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    adressPopup.open()
+})
+editAdressSidebarBtn.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    adressPopup.open()
+})
+
+
+basketForm.enableValidation()
+sidebar.setEventListeners()
+
+let counterMissingGoods = 0
+goods.forEach((item) => {
+    if (item.balance === 0) {
+        counterMissingGoods+=1
+    }
+})
+listHeaders[1].querySelector('.list__title').textContent = `Отсутствуют · ${counterMissingGoods} ${pluralizeGoods(counterMissingGoods)}`
 
 totalData.updateTotalData()
 sidebar.updateSidebarInfo(totalData)
 deliveryContainer.updateDeliveryContainer(goods)
+updateNotifyInfo(goods)
 
 const createListItem = function(data) {
     const item = new ListItem(data, '.list-item-template', separateNumber, handleUpdateGoods, handleDeleteGood, handleCheckGood);

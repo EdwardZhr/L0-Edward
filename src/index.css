@@ -13,6 +13,7 @@
 @import url(./components/Sidebar/Sidebar.css);
 @import url(./components/NavbarMobile/NavbarMobile.css);
 @import url(./components/DeliveryContainer/DeliveryContainer.css);
+@import url(./components/Popup/Popup.css);
 
 body {
     font-family: Segoe UI, Arial, sans-serif;

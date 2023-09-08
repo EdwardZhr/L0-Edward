@@ -60,7 +60,7 @@
                     </div>
                     <div class="basket-form__list list">
                         <div class="list__header">
-                            <span class="list__title">Отсутствуют · 3 товара</span>
+                            <span class="list__title"></span>
                             <div class="list__icon"></div>
                         </div>
                         <div class="list__section--missing"></div>
@@ -68,12 +68,12 @@
                     <div class="basket-form__section">
                         <div class="basket-form__section-header">
                             <h2 class="basket-form__section-title">Способ доставки</h2>
-                            <button class="basket-form__section-btn">Изменить</button>
+                            <button class="basket-form__section-btn basket-form__section-btn--adress">Изменить</button>
                         </div>
                         <div class="basket-form__section-chapter">
-                            <h3 class="basket-form__section-subtitle">Пункт выдачи</h3>
+                            <h3 class="basket-form__section-subtitle basket-form__section-subtitle--way">Пункт выдачи</h3>
                             <div class="basket-form__section-content">
-                                Бишкек, улица Ахматбека Суюмбаева, 12/1
+                                <span class="basket-form__section-adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                                 <div class="basket-form__section-wrap">
                                     <span class="basket-form__section-content-grade">4.99</span>
                                     <span class="basket-form__section-content-schedule">Ежедневно с 10 до 21</span>
@@ -87,27 +87,19 @@
                             </div>
                         </div>
                         <div class="basket-form__delivery-container delivery-container">
-                            <!-- <div class="delivery-container__line">
-                                <h3 class="delivery-container__title">5—6 февраля</h3>  
-                                <div class="delivery-container__content">
-                                    <a class="delivery-container__img" href="#">
-                                        <img src="<%=require('./images/phone-case.png')%>" alt="" height="56" width="40">
-                                        <span class="delivery-container__notify">184</span>
-                                    </a>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="basket-form__section-additional-wrap">
                             <div class="basket-form__section-additional">
                                 Обратная доставка товаров на склад при отказе — 
                                 <span class="basket-form__section-additional-span">бесплатно</span>
+                                <div class="basket-form__section-additional-tooltip">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
                             </div>
                         </div>
                     </div>
                     <div class="basket-form__section">
                         <div class="basket-form__section-header">
                             <h2 class="basket-form__section-title">Способ оплаты</h2>
-                            <button class="basket-form__section-btn">Изменить</button>
+                            <button class="basket-form__section-btn basket-form__section-btn--card">Изменить</button>
                         </div>
                         <div class="basket-form__section-chapter">
                             <div class="basket-form__section-content">
@@ -125,29 +117,30 @@
                         <div class="basket-form__section-chapter">
                             <div class="basket-form__section-content basket-form__section-content--inputs">
                                 <label class="basket-form__section-label basket-form__section-label--name">
-                                    <span class="basket-form__section-input-placeholder">Имя</span>
-                                    <input class="basket-form__section-input basket-form__section-input--name" type='text' placeholder="Имя"></input>
-                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                    <span class="basket-form__section-input-placeholder basket-form__section-input-placeholder--hidden basket-form__section-input-placeholder--name">Имя</span>
+                                    <input class="basket-form__section-input basket-form__section-input--name" id="name" name="lettersOnly" pattern="[А-Яа-я]+" type='text' placeholder="Имя"></input>
+                                    <span class="basket-form__section-input-error basket-form__section-input-error--name basket-form__section-input-error--hidden">Укажите имя</span>
                                 </label>
                                 <label class="basket-form__section-label basket-form__section-label--surname">
-                                    <span class="basket-form__section-input-placeholder">Фамилия</span>
-                                    <input class="basket-form__section-input basket-form__section-input--surname" type='text' placeholder="Фамилия"></input>
-                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                    <span class="basket-form__section-input-placeholder basket-form__section-input-placeholder--hidden basket-form__section-input-placeholder--surname">Фамилия</span>
+                                    <input class="basket-form__section-input basket-form__section-input--surname" id="surname" name="lettersOnly" pattern="[А-Яа-я]+" type='text' placeholder="Фамилия"></input>
+                                    <span class="basket-form__section-input-error basket-form__section-input-error--surname basket-form__section-input-error--hidden">Укажите фамилию</span>
                                 </label>
-                                <label class="basket-form__section-label">
-                                    <span class="basket-form__section-input-placeholder">Почта</span>
-                                    <input class="basket-form__section-input basket-form__section-input--email" type='email' placeholder="Почта"></input>
-                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                <label class="basket-form__section-label basket-form__section-label--email">
+                                    <span class="basket-form__section-input-placeholder basket-form__section-input-placeholder--hidden basket-form__section-input-placeholder--email">Почта</span>
+                                    <input class="basket-form__section-input basket-form__section-input--email" id="email"  type='email' placeholder="Почта"></input>
+                                    <span class="basket-form__section-input-error basket-form__section-input-error--email basket-form__section-input-error--hidden">Проверьте правильность почты</span>
                                 </label>
-                                <label class="basket-form__section-label">
-                                    <span class="basket-form__section-input-placeholder">Телефон</span>
-                                    <input class="basket-form__section-input basket-form__section-input--number" type='text' placeholder="Телефон"></input>
-                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                <label class="basket-form__section-label basket-form__section-label--number">
+                                    <span class="basket-form__section-input-placeholder basket-form__section-input-placeholder--hidden basket-form__section-input-placeholder--number">Телефон</span>
+                                    <input class="basket-form__section-input basket-form__section-input--number" id="number"  type='text' placeholder="Телефон" pattern="^\+\d{1} \d{3} \d{3} \d{2} \d{2}$"></input>
+                                    <span class="basket-form__section-input-error basket-form__section-input-error--number basket-form__section-input-error--hidden">Формат: + 9 999 999 99 99</span>
                                 </label>
-                                <label class="basket-form__section-label">
-                                    <span class="basket-form__section-input-placeholder">ИНН</span>
-                                    <input class="basket-form__section-input basket-form__section-input--inn" type='number' placeholder="ИНН"></input>
-                                    <span class="basket-form__section-input-error">Ошибка</span>
+                                <label class="basket-form__section-label basket-form__section-label--inn">
+                                    <span class="basket-form__section-input-placeholder basket-form__section-input-placeholder--hidden basket-form__section-input-placeholder--inn">ИНН</span>
+                                    <input class="basket-form__section-input basket-form__section-input--inn" id="inn"  type='text' placeholder="ИНН" pattern="[0-9]{14}" maxlength="14"></input>
+                                    <span class="basket-form__section-input-error basket-form__section-input-error--inn basket-form__section-input-error--hidden">Проверьте ИИН</span>
+                                    <span class="basket-form__section-input-help">Для таможенного оформления</span>
                                 </label>
                             </div>
                         </div>
@@ -173,8 +166,8 @@
                         </p>
                         <div class="sidebar__section">
                             <div class="sidebar__section-header">
-                                <h3 class="sidebar__subtitle">Доставка в пункт выдачи</h3>
-                                <button class="sidebar__section-btn"></button>
+                                <h3 class="sidebar__subtitle sidebar__subtitle--adress">Доставка в пункт выдачи</h3>
+                                <button class="sidebar__section-btn sidebar__section-btn--adress"></button>
                             </div>
                             <div class="sidebar__adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
                             <div class="sidebar__date">5–8 фев</div>
@@ -182,13 +175,14 @@
                                 <div class="sidebar__additional">
                                     Обратная доставка товаров на склад при отказе —
                                     <span class="sidebar__additional-span">бесплатно</span>
+                                    <div class="sidebar__additional-tooltip">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
                                 </div>
                             </div>
                         </div>
                         <div class="sidebar__section">
                             <div class="sidebar__section-header">
                                 <h3 class="sidebar__subtitle">Оплата картой</h3>
-                                <button class="sidebar__section-btn"></button>
+                                <button class="sidebar__section-btn sidebar__section-btn--card"></button>
                             </div>
                             <div class="sidebar__card-wrap">
                                 <img src="<%=require('./images/card-mir.svg')%>" alt="" height="24" width="32">
@@ -234,6 +228,109 @@
             <span class="navbar-mobile__icon navbar-mobile__icon--profile"><span>
         </a>
     </div>
+    <div class="popup popup--card">
+        <form action="#" class="popup__container">
+            <button class="popup__close-btn" type="button"></button>
+            <h3 class="popup__title">Способ оплаты</h3>
+            <label class="popup__radio">
+                <input type="radio" name="radio" class="popup__input" checked>
+                <span class="popup__custom-input"></span>
+                <img src="<%=require('./images/card-mir.svg')%>" alt="" height="24" width="32">
+                <span class="popup__label">1234 56•• •••• 1234</span>
+            </label>
+            <label class="popup__radio">
+                <input type="radio" name="radio" class="popup__input">
+                <span class="popup__custom-input"></span>
+                <img src="<%=require('./images/card-visa.svg')%>" alt="" height="24" width="32">
+                <span class="popup__label">1234 56•• •••• 1234</span>
+            </label>
+            <label class="popup__radio">
+                <input type="radio" name="radio" class="popup__input">
+                <span class="popup__custom-input"></span>
+                <img src="<%=require('./images/card-mastercard.svg')%>" alt="" height="24" width="32">
+                <span class="popup__label">1234 56•• •••• 1234</span>
+            </label>
+            <label class="popup__radio">
+                <input type="radio" name="radio" class="popup__input">
+                <span class="popup__custom-input"></span>
+                <img src="<%=require('./images/card-hz.svg')%>" alt="" height="24" width="32">
+                <span class="popup__label">1234 56•• •••• 1234</span>
+            </label>
+            <button class="popup__save-btn" type="button">Выбрать</button>
+        </form>
+    </div>
+
+    <div class="popup popup--adress">
+        <form action="#" class="popup__container popup__container--adress">
+            <button class="popup__close-btn" type="button"></button>
+            <h3 class="popup__title">Способ доставки</h3>
+            <fieldset class="popup__way-fieldset">
+                <label class="popup__method">
+                    <input type="radio" name="way" class="popup__input" checked value="Пункт выдачи">
+                    <span class="popup__custom-btn">В пункт выдачи</span>
+                </label>
+                <label class="popup__method">
+                    <input type="radio" name="way" class="popup__input" value="Курьером">
+                    <span class="popup__custom-btn">Курьером</span>
+                </label>
+            </fieldset>
+            <h4 class="popup__subtitle">Мои адреса</h4>
+            <fieldset class="popup__adress-fieldset popup__adress-fieldset--courier popup__adress-fieldset--hidden">
+                <label class="popup__radio popup__radio--adress">
+                    <input type="radio" name="adress" class="popup__input" checked  value='{"adress": "Бишкек, улица Табышалиева, 57"}'>
+                    <span class="popup__custom-input popup__custom-input--adress"></span>
+                    <span class="popup__label">Бишкек, улица Табышалиева, 57</span>
+                    <button class="popup_del-btn"></button>
+                </label>
+                <label class="popup__radio  popup__radio--adress">
+                    <input type="radio" name="adress" class="popup__input" value='{"adress": "Бишкек, улица Жукеева-Пудовкина, 77/1"}'>
+                    <span class="popup__custom-input popup__custom-input--adress"></span>
+                    <span class="popup__label">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
+                    <button class="popup_del-btn"></button>
+                </label>
+                <label class="popup__radio  popup__radio--adress">
+                    <input type="radio" name="adress" class="popup__input" value='{"adress": "Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1"}'>
+                    <span class="popup__custom-input popup__custom-input--adress"></span>
+                    <span class="popup__label">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
+                    <button class="popup_del-btn"></button>
+                </label> 
+            </fieldset>
+            <fieldset class="popup__adress-fieldset popup__adress-fieldset--point">
+                <label class="popup__radio popup__radio--adress">
+                    <input type="radio" name="adress" class="popup__input" value='{"adress": "г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1", "grade": ""}'>
+                    <span class="popup__custom-input popup__custom-input--adress"></span>
+                    <span class="popup__label">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+                    <button class="popup_del-btn"></button>
+                    <div class="popup__grade-wrap">
+                        <span class="popup__grade"></span>
+                        <span class="popup__grade-point">Пункт выдачи</span>
+                    </div>
+                </label>
+                <label class="popup__radio popup__radio--adress">
+                    <input type="radio" name="adress" class="popup__input" value='{"adress": "г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1", "grade": "4.99"}'>
+                    <span class="popup__custom-input popup__custom-input--adress"></span>
+                    <span class="popup__label">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+                    <button class="popup_del-btn"></button>
+                    <div class="popup__grade-wrap">
+                        <span class="popup__grade">4.99</span>
+                        <span class="popup__grade-point">Пункт выдачи</span>
+                    </div>
+                </label>
+                <label class="popup__radio popup__radio--adress">
+                    <input type="radio" name="adress" class="popup__input"  value='{"adress": "г. Бишкек, улица Табышалиева, д. 57", "grade": "4.99"}'>
+                    <span class="popup__custom-input popup__custom-input--adress"></span>
+                    <span class="popup__label">г. Бишкек, улица Табышалиева, д. 57</span>
+                    <button class="popup_del-btn"></button>
+                    <div class="popup__grade-wrap">
+                        <span class="popup__grade">4.99</span>
+                        <span class="popup__grade-point">Пункт выдачи</span>
+                    </div>
+                </label>
+            </fieldset>
+            <button class="popup__save-btn" type="button">Выбрать</button>
+        </form>
+    </div>
+
     <template class="list-item-template">
         <div class="list-item">
             <div class="list-item__checkbox-wrap list-item__checkbox-wrap--hidden">

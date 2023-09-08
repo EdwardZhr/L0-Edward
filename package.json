@@ -1,13 +1,14 @@
 {
   "name": "l0-edward",
   "version": "1.0.0",
+  "homepage": "https://github.com/EdwardZhr/L0-Edward",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
