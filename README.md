@@ -1,4 +1,4 @@
-# L0 ([https://github.com/EdwardZhr/L0-Edward](https://github.com/EdwardZhr/L0-Edward))
+# L0 ([https://edwardzhr.github.io/L0-Edward/](https://edwardzhr.github.io/L0-Edward/))
 
 Тестовое задание от Wildberries на чистом JS
 
