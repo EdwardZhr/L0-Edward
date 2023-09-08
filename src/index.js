@@ -71,6 +71,7 @@ const handleDeleteGood = function(goodId) {
     listHeaders[1].querySelector('.list__title').textContent = `Отсутствуют · ${counterMissingGoods} ${pluralizeGoods(counterMissingGoods)}`
     totalData.updateTotalData()
     sidebar.updateSidebarInfo(totalData)
+    updateNotifyInfo(goods)
     deliveryContainer.updateDeliveryContainer(goods)
 }
 
@@ -179,8 +180,10 @@ listHeaders.forEach(item => {
 })
 
 const handleCardFormSubmit = function(data) {
-    const img = document.querySelector('.basket-form__section-content img')
-    img.src = data
+    const img = document.querySelector('.basket-form__section-content img');
+    const sidebarImg = document.querySelector('.sidebar__card-wrap img');
+    img.src = data;
+    sidebarImg.src = data;
     cardPopup.close();
 }
 
