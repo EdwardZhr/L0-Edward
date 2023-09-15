@@ -112,21 +112,33 @@ const handleCheckGood = function(goodId) {
     checkAllGoodsCheckbox()
 }
 
-const handleCheckAllGoods = function() {
-    goods.forEach((item, index) => {
-        goods[index].isChecked = !goods[index].isChecked
-    })
-    document.querySelectorAll('.list-item .checkbox__input').forEach(item => {
-        item.checked = !item.checked
-    })
+const handleCheckAllGoods = function(evt) {
+    console.log(evt.target.checked)
+    if (evt.target.checked) {
+        goods.forEach((item, index) => {
+            goods[index].isChecked = true
+        })
+        document.querySelectorAll('.list-item .checkbox__input').forEach(item => {
+            item.checked = true
+        })
+    }
+    if (!evt.target.checked) {
+        goods.forEach((item, index) => {
+            goods[index].isChecked = false
+        })
+        document.querySelectorAll('.list-item .checkbox__input').forEach(item => {
+            item.checked = false
+        })
+    }
+
     totalData.updateTotalData()
     sidebar.updateSidebarInfo(totalData)
     updateNotifyInfo(goods)
     deliveryContainer.updateDeliveryContainer(goods)
 }
 
-chooseAll.addEventListener('input', () => {
-    handleCheckAllGoods()
+chooseAll.addEventListener('input', (evt) => {
+    handleCheckAllGoods(evt)
 })
 
 const pluralizeGoods = function(count) {
